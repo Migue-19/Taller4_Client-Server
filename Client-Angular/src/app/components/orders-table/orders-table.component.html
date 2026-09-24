@@ -1,0 +1,27 @@
+<table class="table table-striped border">
+	<thead>
+		<tr>
+			<th scope="col">Id</th>
+			<th scope="col">Cliente</th>
+			<th scope="col">Total</th>
+			<th scope="col">Fecha</th>
+			<th scope="col">Estado</th>
+		</tr>
+	</thead>
+	<tbody>
+		@for (order of orders; track order) {
+			<tr>
+				<th scope="row">{{ order.id }}</th>
+				<td>{{ order.customer }}</td>
+				<td>{{ order.total | currency }}</td>
+				<td>{{ order.date | date: 'dd/MM/yyyy' }}</td>
+				<td>
+					<dsb-badge-atom
+						[text]="order.status"
+						[type]="statusMap[order.status]" >
+					</dsb-badge-atom>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
