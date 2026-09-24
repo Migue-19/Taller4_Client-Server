@@ -1,0 +1,15 @@
+@switch(state){
+
+    @case('loading'){
+        <app-alert alertState="loading" text="Cargando Libros..." ></app-alert>
+    }
+
+    @case('error'){
+        <app-alert alertState="error" text="Error al Cargar los Libros" ></app-alert>
+    }
+
+    @case('success'){
+        <app-books-table [books]="books" ></app-books-table>
+    }
+
+}
