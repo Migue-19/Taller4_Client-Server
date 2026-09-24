@@ -124,4 +124,41 @@
  *           example: Presencial
  */
 
+/**
+ * @openapi
+ * components:
+ *   schemas:
+ *     Order:
+ *       type: object
+ *       description: Representa un pedido realizado por un cliente
+ *       required:
+ *         - id
+ *         - customer
+ *         - total
+ *         - status
+ *         - date
+ *       properties:
+ *         id:
+ *           type: number
+ *           example: 1
+ *         customer:
+ *           type: string
+ *           example: María López
+ *         total:
+ *           type: number
+ *           example: 149.99
+ *         status:
+ *           type: string
+ *           enum:
+ *             - Pendiente
+ *             - Enviado
+ *             - Entregado
+ *             - Cancelado
+ *           example: Pendiente
+ *         date:
+ *           type: string
+ *           format: date-time
+ *           example: "2026-03-15T10:30:00.000Z"
+ */
+
 export {};
