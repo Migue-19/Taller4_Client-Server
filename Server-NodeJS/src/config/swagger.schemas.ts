@@ -71,4 +71,57 @@
  *           type: number
  *           example: 4500
  */
+
+/**
+ * @openapi
+ * components:
+ *   schemas:
+ *     Error:
+ *       type: object
+ *       description: Respuesta de error estándar generada por HandleError
+ *       required:
+ *         - error
+ *       properties:
+ *         error:
+ *           type: string
+ *           example: countCourses debe ser un entero entre 1 y 100
+ */
+
+/**
+ * @openapi
+ * components:
+ *   schemas:
+ *     Course:
+ *       type: object
+ *       description: Representa un curso académico
+ *       required:
+ *         - id
+ *         - name
+ *         - teacher
+ *         - credits
+ *         - modality
+ *       properties:
+ *         id:
+ *           type: number
+ *           example: 1
+ *         name:
+ *           type: string
+ *           example: Arquitectura de Software
+ *         teacher:
+ *           type: string
+ *           example: Laura Martínez
+ *         credits:
+ *           type: number
+ *           minimum: 1
+ *           maximum: 4
+ *           example: 3
+ *         modality:
+ *           type: string
+ *           enum:
+ *             - Presencial
+ *             - Virtual
+ *             - Hibrido
+ *           example: Presencial
+ */
+
 export {};
