@@ -1,0 +1,752 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>angular-standalone-template documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+          <script>
+              // --- Iframe navigation tracking for Template Playground ---
+              function sendCurrentUrlToParent() {
+                  if (window.parent && window.parent !== window) {
+                      window.parent.postMessage({
+                          type: 'compodoc-iframe-navigate',
+                          url: window.location.pathname + window.location.hash
+                      }, '*');
+                  }
+              }
+              window.addEventListener('hashchange', sendCurrentUrlToParent, false);
+              window.addEventListener('popstate', sendCurrentUrlToParent, false);
+              window.addEventListener('DOMContentLoaded', sendCurrentUrlToParent, false);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">angular-standalone-template documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-variables">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Miscellaneous</li>
+  <li class="breadcrumb-item">Variables</li>
+</ol>
+
+<section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#appConfig" title="src/app/app.config.ts" ><b>appConfig</b>&nbsp;&nbsp;&nbsp;(src/.../app.config.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#BOOKS_MOCK" title="src/app/mocks/books.mocks.ts" ><b>BOOKS_MOCK</b>&nbsp;&nbsp;&nbsp;(src/.../books.mocks.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#clientAngularInterceptor" title="src/app/interceptors/client-angular.interceptor.ts" ><b>clientAngularInterceptor</b>&nbsp;&nbsp;&nbsp;(src/.../client-angular.interceptor.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#COURSES_MOCK" title="src/app/mocks/courses.mocks.ts" ><b>COURSES_MOCK</b>&nbsp;&nbsp;&nbsp;(src/.../courses.mocks.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#environment" title="src/environments/environment.ts" ><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ORDERS_MOCK" title="src/app/mocks/orders.mocks.ts" ><b>ORDERS_MOCK</b>&nbsp;&nbsp;&nbsp;(src/.../orders.mocks.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PRODUCTS_MOCK" title="src/app/mocks/products.mocks.ts" ><b>PRODUCTS_MOCK</b>&nbsp;&nbsp;&nbsp;(src/.../products.mocks.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#routes" title="src/app/app.routes.ts" ><b>routes</b>&nbsp;&nbsp;&nbsp;(src/.../app.routes.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#USERS_MOCK" title="src/app/mocks/users.mocks.ts" ><b>USERS_MOCK</b>&nbsp;&nbsp;&nbsp;(src/.../users.mocks.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>src/app/app.config.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="appConfig"></a>
+                    <span class="name">
+                        <span ><b>appConfig</b></span>
+                        <a href="#appConfig"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../components/App.html" target="_self" >ApplicationConfig</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+
+  /**
+   * Proveedores globales de la aplicación.
+   *
+   * @remarks
+   * Se registran servicios y configuraciones esenciales
+   * que estarán disponibles en toda la aplicación.
+   */
+  providers: [
+
+    /**
+     * Proveedor de listeners globales de errores del navegador.
+     *
+     * @remarks
+     * Captura errores no controlados y eventos globales,
+     * permitiendo un manejo centralizado de excepciones.
+     */
+    provideBrowserGlobalErrorListeners(),
+
+    /**
+     * Configuración de la detección de cambios basada en Zone.js.
+     *
+     * @remarks
+     * &#x60;eventCoalescing: true&#x60; agrupa múltiples eventos en un
+     * solo ciclo de detección de cambios, mejorando
+     * el rendimiento de la aplicación.
+     */
+    provideZoneChangeDetection({ eventCoalescing: true }),
+
+    /**
+     * Proveedor del sistema de enrutamiento.
+     *
+     * @remarks
+     * Registra las rutas definidas en &#x60;routes&#x60;
+     * para la navegación de la aplicación.
+     *
+     * @see {@link routes}
+     */
+    provideRouter(routes),
+
+    /**
+     * Proveedor del cliente HTTP.
+     *
+     * @remarks
+     * Configura &#x60;HttpClient&#x60; con interceptores personalizados
+     * para manejar peticiones y respuestas HTTP de forma
+     * centralizada.
+     *
+     * @see {@link clientAngularInterceptor}
+     */
+    provideHttpClient(
+      withInterceptors([clientAngularInterceptor])
+    ),
+  ]
+}</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Configuración principal de la aplicación Angular.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/mocks/books.mocks.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="BOOKS_MOCK"></a>
+                    <span class="name">
+                        <span ><b>BOOKS_MOCK</b></span>
+                        <a href="#BOOKS_MOCK"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Book.html" target="_self" >Book[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    {
+        id: 1,
+        title: &#x27;Don Quijote de la Mancha&#x27;,
+        author: &#x27;Miguel de Cervantes&#x27;,
+        genre: &#x27;Historia&#x27;,
+        year: 1605,
+        pages: 863,
+    },
+    {
+        id: 2,
+        title: &#x27;Fundación&#x27;,
+        author: &#x27;Isaac Asimov&#x27;,
+        genre: &#x27;Ciencia Ficcion&#x27;,
+        year: 1951,
+        pages: 255,
+    }
+]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Datos de prueba de libros.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/interceptors/client-angular.interceptor.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clientAngularInterceptor"></a>
+                    <span class="name">
+                        <span ><b>clientAngularInterceptor</b></span>
+                        <a href="#clientAngularInterceptor"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>HttpInterceptorFn</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(req, next) &#x3D;&gt; {
+  return next(req.clone({ url: &#x60;${environment.baseUrl}/${req.url}&#x60;}));
+}</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Interceptor HTTP que concatena la URL base a todas las peticiones salientes.</p>
+<p>Este interceptor se encarga de anteponer el <code>baseUrl</code> definido en el
+archivo de configuración de entornos (<code>environment</code>) a cada request HTTP.</p>
+<p>⚠️ Nota:</p>
+<ul>
+<li>No debe usarse con URLs absolutas (<code>http://</code>, <code>https://</code>)</li>
+<li>Está pensado para trabajar con rutas relativas como <code>/users</code>, <code>/login</code>, etc.</li>
+</ul>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/mocks/courses.mocks.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="COURSES_MOCK"></a>
+                    <span class="name">
+                        <span ><b>COURSES_MOCK</b></span>
+                        <a href="#COURSES_MOCK"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Course.html" target="_self" >Course[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    {
+        id: 1,
+        name: &#x27;Arquitectura de Software&#x27;,
+        teacher: &#x27;Laura Martínez&#x27;,
+        credits: 3,
+        modality: &#x27;Presencial&#x27;,
+    },
+    {
+        id: 2,
+        name: &#x27;Bases de Datos&#x27;,
+        teacher: &#x27;Andrés Torres&#x27;,
+        credits: 4,
+        modality: &#x27;Virtual&#x27;,
+    }
+]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Datos de prueba de cursos.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/environments/environment.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="environment"></a>
+                    <span class="name">
+                        <span ><b>environment</b></span>
+                        <a href="#environment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  /**
+   * URL base del backend de la aplicación.
+   *
+   * @remarks
+   * Se utiliza como punto de partida para construir
+   * las peticiones HTTP hacia la API.
+   *
+   * @example
+   * &#x60;&#x60;&#x60;ts
+   * &#x60;${environment.baseUrl}/users&#x60;
+   * &#x60;&#x60;&#x60;
+   */
+  baseUrl: &#x27;http://localhost:3000&#x27;
+}</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Configuración de variables de entorno de la aplicación.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/mocks/orders.mocks.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ORDERS_MOCK"></a>
+                    <span class="name">
+                        <span ><b>ORDERS_MOCK</b></span>
+                        <a href="#ORDERS_MOCK"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Order.html" target="_self" >Order[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    {
+        id: 1,
+        customer: &#x27;María López&#x27;,
+        total: 149.99,
+        status: &#x27;Pendiente&#x27;,
+        date: &#x27;2026-03-15T10:30:00.000Z&#x27;,
+    },
+    {
+        id: 2,
+        customer: &#x27;Pedro Ruiz&#x27;,
+        total: 89.5,
+        status: &#x27;Entregado&#x27;,
+        date: &#x27;2026-03-10T15:45:00.000Z&#x27;,
+    }
+]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Datos de prueba de pedidos.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/mocks/products.mocks.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="PRODUCTS_MOCK"></a>
+                    <span class="name">
+                        <span ><b>PRODUCTS_MOCK</b></span>
+                        <a href="#PRODUCTS_MOCK"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Product.html" target="_self" >Product[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    {
+        id: 1,
+        name: &#x27;Leche entera&#x27;,
+        category: &#x27;Lacteos&#x27;,
+        price: 4500,
+    },
+    {
+        id: 2,
+        name: &#x27;Manzana roja&#x27;,
+        category: &#x27;Frutas&#x27;,
+        price: 3200,
+    }
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/app.routes.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="routes"></a>
+                    <span class="name">
+                        <span ><b>routes</b></span>
+                        <a href="#routes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Routes</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+
+  /**
+   * Ruta de usuarios.
+   *
+   * @remarks
+   * Renderiza el componente &#x60;UsersPage&#x60;, encargado
+   * de mostrar y gestionar el listado de usuarios.
+   */
+  { path: &#x27;users&#x27;, component: UsersPage },
+
+  /**
+   * Ruta de productos.
+   *
+   * @remarks
+   * Renderiza el componente &#x60;ProductsPage&#x60;, encargado
+   * de mostrar y gestionar el listado de productos.
+   */
+  { path: &#x27;products&#x27;, component: ProductsPage },
+
+  /**
+   * Ruta de cursos.
+   *
+   * @remarks
+   * Renderiza el componente &#x60;CoursesPage&#x60;, encargado
+   * de mostrar y gestionar el listado de cursos.
+   */
+  { path: &#x27;courses&#x27;, component: CoursesPage },
+
+  /**
+   * Ruta de pedidos.
+   *
+   * @remarks
+   * Renderiza el componente &#x60;OrdersPage&#x60;, encargado
+   * de mostrar y gestionar el listado de pedidos.
+   */
+  { path: &#x27;orders&#x27;, component: OrdersPage },
+
+  /**
+   * Ruta de libros.
+   *
+   * @remarks
+   * Renderiza el componente &#x60;BooksPage&#x60;, encargado
+   * de mostrar y gestionar el listado de libros.
+   */
+  { path: &#x27;books&#x27;, component: BooksPage },
+
+  /**
+   * Ruta comodín.
+   *
+   * @remarks
+   * Captura cualquier ruta no definida y redirige
+   * automáticamente a la ruta de usuarios.
+   */
+  { path: &#x27;**&#x27;, redirectTo: &#x27;users&#x27; },
+]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Definición de las rutas principales de la aplicación.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/mocks/users.mocks.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="USERS_MOCK"></a>
+                    <span class="name">
+                        <span ><b>USERS_MOCK</b></span>
+                        <a href="#USERS_MOCK"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/User.html" target="_self" >User[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    {
+        id: 1,
+        name: &#x27;Carlos&#x27;,
+        lastName: &#x27;Ramírez&#x27;,
+        age: 22,
+        email: &#x27;carlos.ramirez@example.com&#x27;,
+        engineering: &#x27;Sistemas&#x27;,
+    },
+    {
+        id: 2,
+        name: &#x27;Ana&#x27;,
+        lastName: &#x27;Gómez&#x27;,
+        age: 24,
+        email: &#x27;ana.gomez@example.com&#x27;,
+        engineering: &#x27;Industrial&#x27;,
+    }
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
+            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
