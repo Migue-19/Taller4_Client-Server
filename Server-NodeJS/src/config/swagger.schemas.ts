@@ -161,4 +161,48 @@
  *           example: "2026-03-15T10:30:00.000Z"
  */
 
+/**
+ * @openapi
+ * components:
+ *   schemas:
+ *     Book:
+ *       type: object
+ *       description: Representa un libro de la biblioteca
+ *       required:
+ *         - id
+ *         - title
+ *         - author
+ *         - genre
+ *         - year
+ *         - pages
+ *       properties:
+ *         id:
+ *           type: number
+ *           example: 1
+ *         title:
+ *           type: string
+ *           example: Fundación
+ *         author:
+ *           type: string
+ *           example: Isaac Asimov
+ *         genre:
+ *           type: string
+ *           enum:
+ *             - Ciencia Ficcion
+ *             - Fantasia
+ *             - Historia
+ *             - Tecnologia
+ *           example: Ciencia Ficcion
+ *         year:
+ *           type: number
+ *           minimum: 1950
+ *           maximum: 2025
+ *           example: 1951
+ *         pages:
+ *           type: number
+ *           minimum: 80
+ *           maximum: 900
+ *           example: 255
+ */
+
 export {};
