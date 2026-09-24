@@ -1,5 +1,12 @@
 import { Book } from "../interfaces/books.interface";
 
+/**
+ * Datos de prueba de libros.
+ *
+ * @remarks
+ * Se utiliza en las pruebas unitarias para simular la respuesta
+ * del backend en `GET /api/books/:countBooks`.
+ */
 export const BOOKS_MOCK: Book[] = [
     {
         id: 1,

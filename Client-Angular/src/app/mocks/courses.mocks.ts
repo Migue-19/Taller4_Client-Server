@@ -1,5 +1,12 @@
 import { Course } from "../interfaces/courses.interface";
 
+/**
+ * Datos de prueba de cursos.
+ *
+ * @remarks
+ * Se utiliza en las pruebas unitarias para simular la respuesta
+ * del backend en `GET /api/courses/:countCourses`.
+ */
 export const COURSES_MOCK: Course[] = [
     {
         id: 1,

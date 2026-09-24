@@ -1,5 +1,12 @@
 import { Order } from "../interfaces/orders.interface";
 
+/**
+ * Datos de prueba de pedidos.
+ *
+ * @remarks
+ * Se utiliza en las pruebas unitarias para simular la respuesta
+ * del backend en `GET /api/orders/:countOrders`.
+ */
 export const ORDERS_MOCK: Order[] = [
     {
         id: 1,
