@@ -165,3 +165,24 @@ src/app/services/users/
 - En este taller se utilizan componentes standalone
 - Mantener una estructura clara favorece la escalabilidad y mantenibilidad
 - Revisar cobertura de pruebas unitarias y documentación
+
+## 🧩 Módulos implementados
+
+El monorepo contiene 5 módulos. Cada uno tiene una API en el servidor y una vista en el cliente que la consume por HTTP.
+
+| Módulo | Ruta del cliente (Angular) | Endpoint del servidor (Node.js) | Origen |
+|---|---|---|---|
+| Usuarios | `http://localhost:4200/users` | `GET /api/users/:countUsers` | Base del docente |
+| Productos | `http://localhost:4200/products` | `GET /api/products/:countProducts` | Base del docente |
+| Cursos | `http://localhost:4200/courses` | `GET /api/courses/:countCourses` | Taller |
+| Pedidos | `http://localhost:4200/orders` | `GET /api/orders/:countOrders` | Taller |
+| Libros | `http://localhost:4200/books` | `GET /api/books/:countBooks` | Taller |
+
+Los módulos nuevos (`courses`, `orders`, `books`) validan que la cantidad sea un entero entre 1 y 100; en caso contrario responden `400` con `{ "error": "..." }`. Los datos se generan con faker.js.
+
+## 📚 Documentación del proyecto
+
+- **Swagger (Server):** con el servidor encendido, `http://localhost:3000/api/docs`.
+- **Documentación técnica del backend:** [`Server-NodeJS/docs/DOCUMENTACION_TECNICA.md`](Server-NodeJS/docs/DOCUMENTACION_TECNICA.md).
+- **Compodoc (Client):** ejecutar `npm run compodoc` dentro de `Client-Angular` y abrir `Client-Angular/documentation/index.html`. La carpeta generada está versionada en el repositorio.
+- **Pruebas unitarias (Client):** `npm run test` (Jest) y `npm run test:coverage` para el reporte de cobertura.
